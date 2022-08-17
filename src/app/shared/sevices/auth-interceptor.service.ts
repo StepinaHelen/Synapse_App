@@ -22,12 +22,11 @@ export class AuthInterceptor implements HttpInterceptor {
 		req: HttpRequest<any>,
 		next: HttpHandler
 	): Observable<HttpEvent<any>> {
-	console.log('dfdfdf')
 		const token = this.persistanceService.get("accessToken")
 		console.log(token)
 		req = req.clone({
 			setHeaders: {
-				Authorization: token ? `Token ${token}` : "",
+				Authorization: token ? `Bearer ${token}` : "",
 			},
 		})
 		return next.handle(req)
