@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  message = ''
   constructor(private fb: FormBuilder, private authService: AuthService,
     private router: Router) { }
 
@@ -25,10 +26,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.message = ''
     const values = this.loginForm.value;
     this.authService.login({ "username": values.userName, "password": values.password }).subscribe(data => {
       if (data.success) {
         this.router.navigateByUrl('/products')
+      } else {
+        this.message = data.message
       }
     })
   }

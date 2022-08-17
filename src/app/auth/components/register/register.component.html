@@ -9,6 +9,8 @@
 		<h2>Sign up to Synapse Internship</h2>
 		<p>Sign up on our platform</p>
 		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+			<p class="error-mesage" *ngIf="registerForm.get('confirmPassword').hasError('notEqual')"> Passwords don't match</p>
+			<p  class="error-mesage" *ngIf="message"> *{{message}}</p>
 			<input type="text" placeholder="Username" formControlName="userName" />
 			<input type="password" placeholder="Password" formControlName="password" />
 			<input type="password" placeholder="Confirm password" formControlName="confirmPassword" />

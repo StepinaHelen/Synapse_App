@@ -30,13 +30,21 @@
 			text-decoration: underline;
 		}
 	}
+}
 
+.error-mesage {
+	position: absolute;
+	color: red;
+	margin: 0;
+	top: -20px;
+	font-size: 10px;
+	font-weight: 500;
 }
 
 form {
 	width: 100%;
+	position: relative;
 }
-
 
 input {
 	display: block;
@@ -72,8 +80,6 @@ p {
 	line-height: 20px;
 	letter-spacing: -0.55px;
 }
-
-
 
 button {
 	background: $btn-color;
