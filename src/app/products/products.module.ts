@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ReviewFormComponent } from './components/review-form/review-form.component';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,10 +22,12 @@ const routes: Routes = [
         path: '',
         redirectTo: 'products',
         pathMatch: 'full',
+        
       },
       {
         path: 'products',
-        component: ProductsListComponent
+        component: ProductsListComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'products/:id',
