@@ -1,0 +1,13 @@
+<div class="login-container">
+	<div class="form-container">
+		<span> Don’t have an account? &nbsp;<a [routerLink]="['/register']">Sign Up</a></span>
+		<h2>Sign in to Synapse Internship</h2>
+		<p>Sign in on our platform</p>
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+			<input type="text" placeholder="Username" formControlName="userName" />
+			<input type="password" placeholder="Password" formControlName="password" />
+			<button [disabled]="loginForm.invalid"  type="submit">Sign in</button>
+		</form>
+	</div>
+	<img src="../../../../assets/images/auth-image.jpg" alt="logo-image">
+</div>

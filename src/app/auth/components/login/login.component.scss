@@ -1,0 +1,94 @@
+@import '../../../../assets/scss/variables.scss';
+
+.login-container {
+	display: flex;
+	justify-content: space-between;
+
+	background: $secondary-bg-color;
+	box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+	border-radius: 4px;
+
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 10vh;
+
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: -1.05px;
+}
+
+.form-container {
+	width: 487px;
+	padding: 55px 63px 232px 64px;
+
+	span {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 80px;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+}
+
+form {
+	width: 100%;
+}
+
+
+input {
+	display: block;
+	border: 1px solid rgba(0, 0, 0, 0.32);
+	border-radius: 4px;
+	margin-bottom: 17px;
+	width: 100%;
+	padding: 13px 120px 13px 16px;
+	height: 50px;
+
+	&::placeholder {
+		font-style: normal;
+		font-size: 16px;
+		line-height: 24px;
+		color: rgba(0, 0, 0, 0.6);
+		letter-spacing: -0.85px;
+	}
+}
+
+h2 {
+	color: $title-text-color;
+	margin: 0;
+	font-size: 24px;
+	line-height: 28px;
+	letter-spacing: -1.06px;
+	font-weight: 500;
+}
+
+p {
+	margin-bottom: 31px;
+	margin-top: 0;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: -0.55px;
+}
+
+
+
+button {
+	background: $btn-color;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
+	width: 100%;
+	text-align: center;
+	padding: 12px 0px;
+	border-radius: 4px;
+	letter-spacing: 0.25px;
+	line-height: 16px;
+	color: $secondary-bg-color;
+	border: none;
+
+	&:disabled {
+		opacity: 0.6;
+	}
+}

@@ -1,0 +1,24 @@
+<div class="register-container">
+	<div class="form-container">
+		<div class="form-container_header">
+			<a  [routerLink]="['/login']">
+				<mat-icon>keyboard_backspace</mat-icon>Go back
+			</a>
+			<span>Have an account? &nbsp;<a [routerLink]="['/login']">Sign In</a></span>
+		</div>
+		<h2>Sign up to Synapse Internship</h2>
+		<p>Sign up on our platform</p>
+		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+			<input type="text" placeholder="Username" formControlName="userName" />
+			<input type="password" placeholder="Password" formControlName="password" />
+			<input type="password" placeholder="Confirm password" formControlName="confirmPassword" />
+			<label>
+				<input type='checkbox' formControlName="confirmTerms">
+				<span></span>
+				I have read the &nbsp;<a href="#">Terms and Conditions</a>.
+			</label>
+			<button type="submit" [disabled]="registerForm.invalid">Sign up now</button>
+		</form>
+	</div>
+	<img src="../../../../assets/images/auth-image.jpg" alt="logo-image">
+</div>

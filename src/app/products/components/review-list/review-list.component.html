@@ -1,0 +1,13 @@
+		<ul>
+			<li class="review-container" *ngFor="let review of reviews">
+				<p class="review-container__name">{{review.created_by.username}}
+				  <span>at {{review.created_at | date:'HH:mm , d MMM yyyy' }}</span>
+				</p>
+				<ul class="list-stars">
+					<li *ngFor="let stars of allStars;let i=index">
+						<mat-icon [ngClass]="{orange: i+1 <= review.rate}">star</mat-icon>
+					</li>
+				</ul>
+				<i class="review-container__text">{{review.text}}</i>
+			</li>
+		</ul>

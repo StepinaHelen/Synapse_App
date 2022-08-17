@@ -1,0 +1,43 @@
+.aside-container {
+    width: 270px;
+    height: calc(100vh - 68px);
+    background: #FFFFFF;
+    box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    background: #F6F9FD;
+    border-radius: 50px;
+    margin: 0 auto;
+
+}
+
+hr {
+    height: 1px;
+    background: #E4E7EB;
+}
+
+a {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    padding: 14px 18px;
+    background: #F6F9FD;
+    box-shadow: inset 3px 0px 0px #0D7185;
+    border-radius: 4px;
+}
+ul {
+    width: 100%;
+}
+
+.mat-icon {
+    color:#66788A;
+    margin-right: 8px;
+}
+
