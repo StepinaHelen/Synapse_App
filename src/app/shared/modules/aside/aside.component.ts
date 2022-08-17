@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent implements OnInit {
+  userName = 'Synapse Team'
+  credentials = ''
 
   constructor() { }
 
   ngOnInit(): void {
+    this.credentials = this.userName.split(' ').map((word) => word[0]).join('');
+    
   }
 
 }

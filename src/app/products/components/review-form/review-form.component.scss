@@ -4,11 +4,16 @@
 	padding: 20px 24px;
 	background-color: #fff;
 	margin-bottom: 28px;
+	position: relative;
 }
 
 hr {
-	height: 0.5px;
-	background: #E4E7EB;
+	transform: scaleY(0.5);
+	background: $borderColor;
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	left: 0;
 }
 
 textarea {
@@ -16,10 +21,12 @@ textarea {
 	resize: none;
 	height: 130px;
 	padding: 16px;
-	border: 1px solid #E4E7EB;
+	border: 1px solid $borderColor;
 	margin-bottom: 10px;
+	outline: none;
 
 	&::placeholder {
+		font-weight: 400;
 		font-size: 16px;
 		line-height: 24px;
 		letter-spacing: -0.5px;
@@ -28,26 +35,29 @@ textarea {
 }
 
 .filled {
-	color: #EAEE19;
+	color: $starColor;
 }
 
 .list-stars {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 6px;
-	line-height: 20px;
+
+	color: #D1D1D1;
 
 	.mat-icon {
-		font-size: 20px;
+		font-size: 28px;
+		width: 28px;
+		height: 28px;
 	}
 }
 
 
 button {
 	background: $btn-color;
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: $boxshadowBtn;
 	text-transform: uppercase;
-	width:152px;
+	width: 152px;
 	text-align: center;
 	padding: 12px 0px;
 	border-radius: 4px;
@@ -59,4 +69,16 @@ button {
 	&:disabled {
 		opacity: 0.6;
 	}
+	&:hover {
+		background-color: #2592a8;
+	}
+}
+
+p {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: -0.5px;
+	color: $accent-color;
+	margin: 0 0 37px 0;
 }

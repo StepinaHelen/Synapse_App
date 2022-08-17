@@ -1,43 +1,65 @@
+@import 'src/assets/scss/variables.scss';
+:host {
+    position: fixed;
+    // height: calc(100vh - 65px);
+    top:65px;
+    left: 0;
+}
+
 .aside-container {
-    width: 270px;
-    height: calc(100vh - 68px);
-    background: #FFFFFF;
-    box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
-    padding: 24px 16px;
-    text-align: center;
+	width: 270px;
+	height: calc(100vh - 68px);
+	background: $secondary-bg-color;
+	box-shadow: $boxShadowContainer;
+	padding: 24px 16px;
+	text-align: center;
 }
 
 .profile-image {
-    width: 100px;
-    height: 100px;
-    background: #F6F9FD;
-    border-radius: 50px;
-    margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	background: $cardBgColor;
+	border-radius: 50px;
+	margin: 0 auto;
+	position: relative;
+
+	span {
+		position: absolute;
+		font-weight: 500;
+		font-size: 36px;
+		line-height: 20px;
+		letter-spacing: -0.5px;
+		color: $title-text-color;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		
+	}
 
 }
 
 hr {
-    height: 1px;
-    background: #E4E7EB;
+	transform: scaleY(0.5);
+	background: $borderColor;
 }
 
 a {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 li {
-    padding: 14px 18px;
-    background: #F6F9FD;
-    box-shadow: inset 3px 0px 0px #0D7185;
-    border-radius: 4px;
+	padding: 14px 18px;
+	background: $cardBgColor;
+	box-shadow: inset 3px 0px 0px $btn-color;
+	border-radius: 4px;
 }
+
 ul {
-    width: 100%;
+	width: 100%;
 }
 
 .mat-icon {
-    color:#66788A;
-    margin-right: 8px;
+	color: $iconColor;
+	margin-right: 8px;
 }
-

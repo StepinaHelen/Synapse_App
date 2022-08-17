@@ -1,5 +1,5 @@
 <div class="img-container">
-	<img [src]="infoProduct?.img? apiURLImg + infoProduct?.img: infoProduct?.img" alt="">
+	<img [src]="infoProduct?.img? apiURLImg + infoProduct?.img: 'assets/images/no-image.jpg'" alt="product image">
 	<h5>{{infoProduct?.title}}</h5>
 	<p>{{infoProduct?.text}}</p>
 </div>

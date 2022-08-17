@@ -3,8 +3,8 @@
     height: 100%;
 }
 .img-container {
-	background: #FFFFFF;
-	box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+	background: $secondary-bg-color;
+	box-shadow: $boxShadowContainer;
 	border-radius: 4px;
 	padding: 35px 37px 50px 37px;
 	width: 375px;
@@ -14,8 +14,8 @@
 
 	img {
 		width: 300px;
-		// height: 300px;
 		border-radius: 12px;
+		margin-bottom: 34px;
 	}
 
 	h5 {
@@ -23,7 +23,9 @@
 		font-size: 24px;
 		line-height: 28px;
 		letter-spacing: -0.6px;
-		color: #212529;
+		color: $title-text-color;
+		margin: 0;
+		margin-bottom: 17px;
 	}
 
 	p {
@@ -31,6 +33,6 @@
 		line-height: 20px;
 		text-align: center;
 		letter-spacing: -0.5px;
-		color: #9EA0A5;
+		margin: 0;
 	}
 }

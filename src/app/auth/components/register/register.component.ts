@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { Observable } from 'rxjs';
 import { CustomValidators } from 'src/app/shared/validators/custom-validators';
 import { AuthService } from '../../services/auth.service';
@@ -12,12 +12,14 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit,OnDestroy {
   registerForm: FormGroup;
   isSubmiting$: Observable<boolean>
   message = ''
 
+  destroy$ = new Subject<void>();
   passwordSubscription: Subscription;
+
   constructor(private fb: FormBuilder,
     private router: Router,
     private authService: AuthService) { }
@@ -51,5 +53,11 @@ export class RegisterComponent implements OnInit {
         this.message = data.message
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+     this.passwordSubscription.unsubscribe()
   }
 }

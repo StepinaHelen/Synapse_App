@@ -7,14 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
   @Input() infoProduct: any;
+  
   apiURLImg = 'http://smktesting.herokuapp.com/static/'
 
-  constructor() {
+  constructor() { }
 
-   }
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
 }

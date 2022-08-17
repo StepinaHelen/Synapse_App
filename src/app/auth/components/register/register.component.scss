@@ -5,7 +5,7 @@
 	justify-content: space-between;
 
 	background: $secondary-bg-color;
-	box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+	box-shadow: $boxShadowContainer;
 	border-radius: 4px;
 
 	width: 960px;
@@ -46,7 +46,7 @@ form {
 
 input {
 	display: block;
-	border: 1px solid rgba(0, 0, 0, 0.32);
+	border: $borderInputColor;
 	border-radius: 4px;
 	margin-bottom: 24px;
 	width: 100%;
@@ -97,7 +97,7 @@ label {
 
 button {
 	background: $btn-color;
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: $boxshadowBtn;
 	text-transform: uppercase;
 	width: 100%;
 	text-align: center;
@@ -109,6 +109,9 @@ button {
 	   &:disabled {
         opacity: 0.6;
     }
+		&:hover {
+		background-color: #2592a8;
+	}
 }
 
 .custom-checkbox {
@@ -122,13 +125,12 @@ label input {
 }
 
 label span {
-	/* <-- стилизируем новый */
 	width: 18px;
 	height: 18px;
 	border: 2px solid #425A70;
 	display: inline-block;
 	position: relative;
-	background-color: #FFF;
+	background-color: $secondary-bg-color;
 	border-radius: 2px;
 	padding: 3px;
 }
@@ -151,7 +153,7 @@ label span {
 
 .error-mesage {
 	position: absolute;
-	color: red;
+	color: $errorColor;
 	margin: 0;
 	top: -20px;
 	font-size: 10px;
