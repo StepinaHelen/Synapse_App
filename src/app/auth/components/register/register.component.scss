@@ -43,6 +43,10 @@ form {
 	position: relative;
 }
 
+a:hover {
+	color: #2592a8;
+	font-weight: 500;
+}
 
 input {
 	display: block;
@@ -86,7 +90,6 @@ label {
 
 	a {
 		text-decoration-line: underline;
-
 		color: $link-color;
 	}
 
@@ -106,10 +109,12 @@ button {
 	letter-spacing: 0.25px;
 	color: $secondary-bg-color;
 	border: none;
-	   &:disabled {
-        opacity: 0.6;
-    }
-		&:hover {
+
+	&:disabled {
+		opacity: 0.6;
+	}
+
+	&:hover {
 		background-color: #2592a8;
 	}
 }

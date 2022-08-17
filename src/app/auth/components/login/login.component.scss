@@ -28,6 +28,10 @@
 
 		a {
 			text-decoration: underline;
+			&:hover{
+				color: #2592a8;
+				font-weight:500 ;
+			}
 		}
 	}
 }

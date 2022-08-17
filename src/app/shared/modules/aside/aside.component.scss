@@ -46,13 +46,18 @@ hr {
 a {
 	display: flex;
 	align-items: center;
+	padding: 14px 18px;
+	background: $cardBgColor;
+	border-radius: 4px;
+	&:hover {
+	background-color: #d9e9ec;
+	font-weight: 600;
+		color: $iconColor;
+	}
 }
 
 li {
-	padding: 14px 18px;
-	background: $cardBgColor;
-	box-shadow: inset 3px 0px 0px $btn-color;
-	border-radius: 4px;
+	margin-bottom: 12px;
 }
 
 ul {
@@ -62,4 +67,7 @@ ul {
 .mat-icon {
 	color: $iconColor;
 	margin-right: 8px;
+}
+.active {
+	box-shadow: inset 3px 0px 0px $btn-color;
 }

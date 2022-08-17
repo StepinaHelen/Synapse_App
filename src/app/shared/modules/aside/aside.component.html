@@ -6,8 +6,13 @@
 	<hr />
 	<ul>
 		<li>
-			<a [routerLink]="'products'">
+			<a [routerLink]="'products'" routerLinkActive="active">
 				<mat-icon fontSet="material-icons-outlined">shopping_basket</mat-icon> Products
+			</a>
+		</li>
+				<li>
+			<a [routerLink]="'#'" routerLinkActive="active">
+				<mat-icon fontSet="material-icons-outlined">lock</mat-icon> In progress
 			</a>
 		</li>
 	</ul>
