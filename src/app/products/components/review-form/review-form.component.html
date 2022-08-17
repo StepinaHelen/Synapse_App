@@ -1,12 +1,12 @@
 <div class="post-container">
 	<p>Your review</p>
 	<hr>
-	<textarea placeholder="Type your review..."></textarea>
+	<textarea placeholder="Type your review..." [(ngModel)]="review"></textarea>
 	<ul class="list-stars">
 		<li *ngFor="let stars of allStars;let i=index" (mouseenter)="onMouseenter(i)" (mouseleave)="onClearHover()"
 			(click)="onSelected(i + 1)">
 			<mat-icon [ngClass]="{filled: hoverStars > i || !hoverStars && selectedStars > i}">star</mat-icon>
 		</li>
 	</ul>
-	<button>Submit review</button>
+	<button (click)="onSubmit()">Submit review</button>
 </div>

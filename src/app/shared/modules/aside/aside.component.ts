@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent implements OnInit {
-  userName = 'Synapse Team'
+  userName = localStorage.getItem('userName')|| 'Synapse Team'
   credentials = ''
 
   constructor() { }

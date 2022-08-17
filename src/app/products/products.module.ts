@@ -12,6 +12,9 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ReviewFormComponent } from './components/review-form/review-form.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { FormsModule } from '@angular/forms';
+import { FooterModule } from '../shared/modules/footer/footer.module';
+import { InProgressPageComponent } from '../shared/modules/inprogress-page/inprogresspage.component';
 
 const routes: Routes = [
   {
@@ -33,6 +36,10 @@ const routes: Routes = [
         path: 'products/:id',
         component: ProductInfoComponent
       },
+      {
+        path: 'inprogress',
+        component: InProgressPageComponent
+      },
     ]
   },
 ]
@@ -52,8 +59,9 @@ const routes: Routes = [
     MatTableModule,
     HeaderModule,
     AsideModule,
-    MatIconModule
-
+    MatIconModule,
+    FormsModule,
+    FooterModule
   ]
 })
 export class ProductsModule { }

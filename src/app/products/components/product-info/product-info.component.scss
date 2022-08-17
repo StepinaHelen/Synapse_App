@@ -2,10 +2,16 @@
 
 .img-reviews-container {
 	display: flex;
+	position: relative;
 }
 
 .reviews-container {
 	width: 700px;
+	margin-bottom: 24px;
+	margin-left: 403px;
 }
 
-
+app-product-card::ng-deep {
+	position: fixed;
+	width: 100%;
+}

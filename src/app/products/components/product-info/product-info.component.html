@@ -1,7 +1,7 @@
 <div class="img-reviews-container">
 	<app-product-card [infoProduct]="infoProduct"></app-product-card>
 	<div class="reviews-container">
-		<app-review-form></app-review-form>
+		<app-review-form (reviewItem)="reviewsHandler($event)"></app-review-form>
 		<app-review-list [reviews]="reviews"></app-review-list>
 	</div>
 </div>

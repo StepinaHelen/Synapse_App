@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { ResponseI } from '../../types/auth.interface';
 
 @Component({
   selector: 'app-login',
@@ -28,11 +29,12 @@ export class LoginComponent implements OnInit, OnDestroy{
     })
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.message = ''
     const values = this.loginForm.value;
-    this.authService.login({ "username": values.userName, "password": values.password }).subscribe(data => {
+    this.authService.login({ "username": values.userName, "password": values.password }).subscribe((data:ResponseI )=> {
       if (data.success) {
+        localStorage.setItem('userName', values.userName)
         this.router.navigateByUrl('/products')
       } else {
         this.message = data.message

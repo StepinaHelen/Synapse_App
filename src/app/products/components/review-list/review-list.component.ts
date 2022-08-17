@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductReviewI } from '../../types/products.interface';
 
 @Component({
   selector: 'app-review-list',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ReviewListComponent implements OnInit {
   allStars = new Array(5);
-  @Input() reviews: any[];
+  @Input() reviews: ProductReviewI[] = [];
   constructor() { }
 
   ngOnInit(): void {

@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ProductsService } from '../../services/products.service';
+import { ProductI } from '../../types/products.interface';
 
 @Component({
   selector: 'app-products-list',
@@ -10,14 +11,13 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductsListComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['title', 'text', 'actions'];
-  dataSource: any[];
+  dataSource: ProductI[];
   destroy$ = new Subject<void>();
 
-  constructor(private productsService: ProductsService, private router: Router,
-    private route: ActivatedRoute) { }
+  constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe(data => {
+    this.productsService.getProducts().subscribe((data:ProductI[]) => {
       this.dataSource = data
     })
   }

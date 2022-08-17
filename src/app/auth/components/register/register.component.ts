@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
 import { CustomValidators } from 'src/app/shared/validators/custom-validators';
 import { AuthService } from '../../services/auth.service';
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit,OnDestroy {
+export class RegisterComponent implements OnInit, OnDestroy {
   registerForm: FormGroup;
   isSubmiting$: Observable<boolean>
   message = ''
@@ -47,7 +46,8 @@ export class RegisterComponent implements OnInit,OnDestroy {
     const values = this.registerForm.value;
     this.authService.register({ "username": values.userName, "password": values.password }).subscribe(data => {
       if (data.success) {
-        this.router.navigateByUrl('/login')
+        localStorage.setItem('userName', values.userName)
+        this.router.navigateByUrl('/products')
       }
       else {
         this.message = data.message
@@ -58,6 +58,6 @@ export class RegisterComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-     this.passwordSubscription.unsubscribe()
+    this.passwordSubscription.unsubscribe()
   }
 }

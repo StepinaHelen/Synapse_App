@@ -11,7 +11,6 @@ import { map, tap } from "rxjs/operators";
 export class AuthService {
   constructor(private http: HttpClient, private persistanceService: PersistanceService) { }
   
-
   register(data: any): Observable<any> {
     const url = environment.apiURL + "/register/"
     return this.http.post<any>(url, data).pipe(
