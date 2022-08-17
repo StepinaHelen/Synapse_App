@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+* ::after {
+  box-sizing: inherit;
+}
+
+
+body {
+	background-color: $bg-color;
+	color: $primary-text-color;
+	font-family: $main-font;
+	letter-spacing: -1.05px;
+	font-size: 14px;
+	line-height: 17px;
+	font-style: normal;
+	margin: 0px;
+}
+a {
+	text-decoration: none;
+	color: $primary-text-color;
+	display: block;
+	cursor: pointer;
+}
+ul {
+	padding: 0 0;
+	margin: 0;
+}
+li {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+img {
+	display: block;
+}
+button {
+	cursor: pointer;
+}
