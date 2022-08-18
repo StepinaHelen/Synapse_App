@@ -1,13 +1,13 @@
 @import "./variables.scss";
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 * ::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 
@@ -21,16 +21,19 @@ body {
 	font-style: normal;
 	margin: 0px;
 }
+
 a {
 	text-decoration: none;
 	color: $primary-text-color;
 	display: block;
 	cursor: pointer;
 }
+
 ul {
 	padding: 0 0;
 	margin: 0;
 }
+
 li {
 	list-style: none;
 	padding: 0px;
@@ -40,6 +43,7 @@ li {
 img {
 	display: block;
 }
+
 button {
 	cursor: pointer;
 }
