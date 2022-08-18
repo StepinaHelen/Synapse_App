@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ProductI, ProductReviewI } from '../types/products.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +12,19 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<any> {
+  getProducts(): Observable<ProductI[]> {
     const url = environment.apiURL + "/products/"
     return this.http.get<any>(url).pipe()
   }
 
-  getProductsInfo(id: number): Observable<any> {
+  getProductsReviews(id: number): Observable<ProductReviewI[]> {
     const url = environment.apiURL + `/reviews/${id}`
     return this.http.get<any>(url).pipe()
   }
-  postInfo(id: number, data:any): Observable<any> {
+
+  postReview(id: number, data:any): Observable<ProductReviewI> {
     const url = environment.apiURL + `/reviews/${id}`
     return this.http.post<any>(url, data).pipe()
   }
 
-
-  // http://smktesting.herokuapp.com/api/reviews/2
 }

@@ -16,7 +16,7 @@ export interface OwnerReviewI {
 }
 
 export interface ProductI {
-  id: string
+  id: number
   img: string
   text: string
   title: string

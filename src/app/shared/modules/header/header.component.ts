@@ -10,8 +10,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   logOut() {
     this.router.navigate([`/login`]);
     localStorage.removeItem('accessToken')

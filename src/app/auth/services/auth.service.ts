@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from "rxjs/operators";
+
 import { environment } from 'src/environments/environment';
 import { PersistanceService } from '../../shared/sevices/persistance.service';
-import { map, tap } from "rxjs/operators";
+import { ResponseI } from '../types/auth.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ import { map, tap } from "rxjs/operators";
 export class AuthService {
   constructor(private http: HttpClient, private persistanceService: PersistanceService) { }
   
-  register(data: any): Observable<any> {
+  register(data: any): Observable<ResponseI> {
     const url = environment.apiURL + "/register/"
     return this.http.post<any>(url, data).pipe(
       tap((res: any) => {
@@ -20,7 +22,7 @@ export class AuthService {
     )
   }
 
-  login(data: any): Observable<any> {
+  login(data: any): Observable<ResponseI> {
     const url = environment.apiURL + "/login/"
     return this.http
       .post<any>(url, data).pipe(

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InProgressPageComponent } from './inprogresspage.component';
+import { InProgressPageComponent } from './inprogress-page.component';
 
 
 

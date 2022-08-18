@@ -11,7 +11,6 @@ export class ReviewListComponent implements OnInit {
   @Input() reviews: ProductReviewI[] = [];
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InProgressPageComponent } from './inprogresspage.component';
+import { InProgressPageComponent } from './inprogress-page.component';
 
 describe('ProgressPageComponent', () => {
   let component: InProgressPageComponent;

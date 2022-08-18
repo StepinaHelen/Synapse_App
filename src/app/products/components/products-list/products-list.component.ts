@@ -17,13 +17,13 @@ export class ProductsListComponent implements OnInit, OnDestroy {
   constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe((data:ProductI[]) => {
+    this.productsService.getProducts().subscribe((data: ProductI[]) => {
       this.dataSource = data
     })
   }
 
-  clickHandler(element: any): void {
-    this.router.navigate([`/products/${element.id}`]).then();
+  clickHandler(product: ProductI): void {
+    this.router.navigate([`/products/${product.id}`]);
   }
 
   ngOnDestroy(): void {

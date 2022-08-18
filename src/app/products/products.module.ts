@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+
 import { ProductsComponent } from './products.component';
 import { HeaderModule } from '../shared/modules/header/header.module';
 import { AsideModule } from '../shared/modules/aside/aside.module';
-import { RouterModule, Routes } from '@angular/router';
-import { ProductsListComponent } from './components/products-list/products-list.component';
-import { MatTableModule } from '@angular/material/table';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
-import { MatIconModule } from '@angular/material/icon';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ReviewFormComponent } from './components/review-form/review-form.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
-import { FormsModule } from '@angular/forms';
 import { FooterModule } from '../shared/modules/footer/footer.module';
-import { InProgressPageComponent } from '../shared/modules/inprogress-page/inprogresspage.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { InProgressPageComponent } from '../shared/modules/inprogress-page/inprogress-page.component';
 
 const routes: Routes = [
   {

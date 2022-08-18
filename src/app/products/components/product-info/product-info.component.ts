@@ -10,10 +10,11 @@ import { ProductI, ProductReviewI } from '../../types/products.interface';
   templateUrl: './product-info.component.html',
   styleUrls: ['./product-info.component.scss']
 })
+  
 export class ProductInfoComponent implements OnInit, OnDestroy {
   infoProduct: any;
   id: number;
-  reviews: ProductReviewI[]=[];
+  reviews: ProductReviewI[] = [];
   destroy$ = new Subject<void>();
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
@@ -25,14 +26,16 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
       this.reviews = data.productsReview
     })
   }
-  getProducts(id): Observable<ProductI> {
+
+  getProducts(id: number): Observable<ProductI> {
     return this.productsService.getProducts().pipe(map((el) => el.find(el => el.id === id)))
   }
-  getProductsReviews(id: any): Observable<ProductReviewI[]> {
-    return this.productsService.getProductsInfo(id);
+
+  getProductsReviews(id: number): Observable<ProductReviewI[]> {
+    return this.productsService.getProductsReviews(id);
   }
 
-  getFullInFo(id: number): Observable<{product:ProductI, productsReview:ProductReviewI[]}> {
+  getFullInFo(id: number): Observable<{ product: ProductI, productsReview: ProductReviewI[] }> {
     return combineLatest([
       this.getProducts(id),
       this.getProductsReviews(id),
@@ -43,9 +46,9 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     );
   }
 
-  reviewsHandler(e: ProductReviewI):void {
-    const dataReview = { ...e, product: this.id, id: this.id }
-     this.reviews.unshift(dataReview)
+  reviewsHandler(productReview: ProductReviewI): void {
+    const dataReview = { ...productReview, product: this.id, id: this.id }
+    this.reviews.unshift(dataReview)
   }
 
   ngOnDestroy(): void {
